@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-svx@x9b!b2irrv78)tmc9ce@k+*gyxnq3q2inw#x5o+m(7&o4i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['34.95.164.88']
 
@@ -145,3 +145,8 @@ MESSAGE_TAGS = {
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
 }
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
